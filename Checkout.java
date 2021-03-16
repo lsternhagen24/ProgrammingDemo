@@ -40,13 +40,14 @@ public class Checkout {
         if(discount < 0 || discount > 100)throw new Exception("Invalid Discount Percentage " + discount + "%. Must be between 0% and 100%");
 
         int chargeDays = 0;
-        LocalDate date = checkOutdate;
-        LocalDate endDate = date.plusDays(rentalCount);        
+        //Start the loop on the start date + 1
+        LocalDate date = checkOutdate.plusDays(1);
+        LocalDate endDate = checkOutdate.plusDays(rentalCount);        
         int curYear = date.getYear();
         HashSet<LocalDate> holidays = RentChargeProperties.Holidays(curYear);
 
         //loop through all days for rental and calculate how many are charge days.
-        while(date.isBefore(endDate)){
+        while(date.isBefore(endDate) || date.equals(endDate)){
             //If we are on a new year then update the holidays to be for the new year.
             if(date.getYear() != curYear){
                 curYear = date.getYear();

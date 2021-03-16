@@ -89,12 +89,12 @@ public class Tests {
         assertEquals(r.tool.strType, "Jackhammer");
         assertEquals(r.checkOutDate,  LocalDate.parse("2015-07-02"));
         assertEquals(r.dueDate, LocalDate.parse("2015-07-11"));
-        assertEquals(r.chargeDays, 6);
+        assertEquals(r.chargeDays, 5);
         assertEquals(r.tool.rentChrgProp.dblDailyCharge, 2.99, ROUNDING_ERROR);
         assertEquals(r.discount, 0);   
-        assertEquals(r.preDiscountCharge, 17.94, ROUNDING_ERROR);
+        assertEquals(r.preDiscountCharge, 14.95, ROUNDING_ERROR);
         assertEquals(r.discountAmount, 0, ROUNDING_ERROR);
-        assertEquals(r.finalCharge, 17.94, ROUNDING_ERROR);
+        assertEquals(r.finalCharge, 14.95, ROUNDING_ERROR);
     }
     public void Test6()throws Exception{
         RentalAgreement r = Checkout.CheckoutItem(new Tool("JAKR"), 4, LocalDate.parse("2020-07-02"), 50);
