@@ -1,6 +1,7 @@
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
+//Wrapper class for localdate. 
 public class Holiday {
 
     public LocalDate date;

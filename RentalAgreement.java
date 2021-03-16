@@ -20,8 +20,11 @@ public class RentalAgreement {
         this.discount = discount;
         this.dueDate =dueDate;
         this.chargeDays = chargeDays;
+        //preDiscountCharge = chargedays * dailychargerate 
         this.preDiscountCharge = new BigDecimal(((double)chargeDays) * tool.rentChrgProp.dblDailyCharge).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        //discountAmount = preDiscountCharge * discount percentage
         this.discountAmount = new BigDecimal(preDiscountCharge * (((double) discount) * .01)).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        //finalCharge = preDiscountCharge - discountAmount
         this.finalCharge = new BigDecimal(preDiscountCharge - discountAmount).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 

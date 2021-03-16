@@ -1,15 +1,15 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
-
 import java.time.LocalDate;
-
 import org.junit.Test;
 
 
 public class Tests {
+    //rounding error. Needed for double comparisons
     public static final double ROUNDING_ERROR = .001;
 
+    //run all tests
     public static void main(String[] args) throws Exception {
 
         Tests t = new Tests();

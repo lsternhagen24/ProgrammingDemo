@@ -70,7 +70,7 @@ public class Tool {
         return "ToolCode: " + this.strToolCode + "\n" + "Brand: " + this.strBrand + "\n" + "Tool Type: " + this.strType;
     }
 
-    
+    //hashcode for mapping tools. Use toolcode string hashcode.
     @Override
     public int hashCode() {
         return this.strToolCode.hashCode();

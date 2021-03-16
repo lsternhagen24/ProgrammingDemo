@@ -31,7 +31,6 @@ public class Checkout {
             System.out.println(rentalAgreement.toString());
         }
         sc.close();
-
     }
     public static RentalAgreement CheckoutItem(Tool tool, int rentalCount, LocalDate checkOutdate, int discount) throws Exception{
 
